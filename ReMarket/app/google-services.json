@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1035672224115",
+    "firebase_url": "https://remarket-2bd06-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "remarket-2bd06",
+    "storage_bucket": "remarket-2bd06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035672224115:android:cd65fd529d0e5bdc098506",
+        "android_client_info": {
+          "package_name": "com.campusfp.remarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035672224115-1den9dduooca127hv5gutnnhukh5hih0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.campusfp.remarket",
+            "certificate_hash": "d15086d9e15246efbddf7791b8272334e4b30d2d"
+          }
+        },
+        {
+          "client_id": "1035672224115-598jkd03klikr9pcmh6p3qnd9kqfonpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx-ywrqV304en8_5IfWaJKNzuDfTigM00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035672224115-598jkd03klikr9pcmh6p3qnd9kqfonpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

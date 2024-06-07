@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chat.ChatActivity">
+
+    <RelativeLayout
+        android:id="@+id/ToolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+
+        <ImageButton
+            android:id="@+id/Ib_regresar"
+            android:src="@drawable/ic_regresar"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/toolbarIV"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/Txt_nombre_vendedor_chat"
+            android:layout_marginEnd="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/Txt_nombre_vendedor_chat"
+            android:text="@string/Txt_nombre_vendedor_chat"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatsRv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_below="@+id/ToolbarRL"
+        tools:listitem="@layout/item_chat_izq"
+        android:layout_above="@+id/View2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <View
+        android:id="@+id/View2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        android:layout_above="@id/RL_mensaje" />
+
+    <RelativeLayout
+        android:id="@+id/RL_mensaje"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/Et_mensaje_chat"
+            android:hint="@string/Et_mensaje_chat"
+            android:padding="10dp"
+            android:layout_marginTop="7dp"
+            android:inputType="textImeMultiLine|textCapSentences"
+            android:layout_toStartOf="@+id/adjuntarFAB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/adjuntarFAB"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/enviarFAB"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/ic_img_chat"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            app:fabCustomSize="45dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/enviarFAB"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_enviar_chat"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            app:fabCustomSize="45dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

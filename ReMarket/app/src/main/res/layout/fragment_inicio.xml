@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Fragmentos.FragmentInicio">
+
+    <!--Seleccionar ubicación-->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp">
+
+        <TextView
+            android:id="@+id/Tv_localizacion"
+            android:text="@string/Tv_localizacion"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat = "@drawable/ic_ubicacion"
+            android:drawablePadding="10dp"
+            app:drawableEndCompat = "@drawable/ic_siguiente"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/distanciaSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:valueFrom="1.0"
+            android:valueTo="50.0"
+            android:stepSize="1.0"
+            android:value="10.0" />
+
+        <LinearLayout
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_marginStart="6dp"
+                android:id="@+id/distanciaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/distancia" />
+
+            <TextView
+                android:id="@+id/distanciaTextView"
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/distancia_inicial" />
+
+            <TextView
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/km" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5">
+
+        <!--Buscar anuncio-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="-4dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true"
+            android:layout_weight="4"
+            app:contentPadding="7dp">
+
+            <EditText
+                android:id="@+id/Et_buscar"
+                android:hint="@string/Et_buscar"
+                app:drawableStartCompat = "@drawable/ic_buscar"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--Boton limpiar-->
+        <ImageButton
+            android:id="@+id/Ib_limpiar"
+            android:src="@drawable/ic_limpiar_busq"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:text="@string/Txt_categoria"
+        style="@style/TextAppearance.MaterialComponents.Overline"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--Lista de categorias-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriaRV"
+        tools:listitem="@layout/item_categoria_inicio"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--Lista de anuncios-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/anunciosRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_anuncio_nueva_version"
+        android:layout_marginTop="5dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
